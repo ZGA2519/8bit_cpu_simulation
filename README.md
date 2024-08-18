@@ -1,4 +1,4 @@
-# CPU Simmulation
+# 8-bit CPU Simulation
 8 bit intruction set
 4 bit op code
 4 bit arguments
