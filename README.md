@@ -1,7 +1,6 @@
 # 8-bit CPU Simulation
-8 bit intruction set
-4 bit op code
-4 bit arguments
+8-bit CPU Simulation using von Neumann Architecture <br> 
+For this instruction, 8 bits are separated by a set of 4-bit op code and 4-bit operand.
 
 ## Code 1 line per instruction
 
