@@ -22,8 +22,8 @@ cir: int = 0               # Current Instruction Register
 mar: int = 0               # Memory Address Register
 mdr: int = 0               # Memory Data Register
 
-def print_memory(op: str):
-    def format(num):
+def print_memory(op: str) -> str:
+    def format(num: int) -> str:
         binary = f"{num:08b}"
         return binary[:4] + '_' + binary[4:]
     print(f"\n######################### {op.upper()} #################################\n")
