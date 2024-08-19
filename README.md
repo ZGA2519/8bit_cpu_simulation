@@ -2,7 +2,8 @@
 8-bit CPU Simulation using von Neumann Architecture <br> 
 For this instruction, 8 bits are separated by a set of 4-bit op code and 4-bit operand.
 
-## Code 1 line per instruction
+## Code 
+One line per instruction
 
 ```HLT```                        Halt process <br> 
 ```ADD   [address]```            Add value of [address] to accumulater <br> 
