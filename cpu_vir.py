@@ -2,8 +2,8 @@ import sys
 from typing import List
 """
     8 bit intruction set
-    4 bit op code
-    4 bit arguments
+    4 bit opcode
+    4 bit oprand
     HLT   0000 0000
     ADD   0001 0000
     SUB   0010 0000
