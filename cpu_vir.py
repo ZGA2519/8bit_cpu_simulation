@@ -3,7 +3,7 @@ from typing import List
 """
     8 bit intruction set
     4 bit opcode
-    4 bit oprand
+    4 bit operand
     HLT   0000 0000
     ADD   0001 0000
     SUB   0010 0000
@@ -62,8 +62,8 @@ while True:
     
     # Decode
     control_unit = cir
-    op_code     = (control_unit >> 4) & 0b1111
-    oprand   = control_unit & 0b1111
+    opcode     = (control_unit >> 4) & 0b1111
+    operand   = control_unit & 0b1111
     print_memory('Decode')
     if input("Enter to next intruction block or enter `q` to quit.").lower() == 'q': break
     
@@ -75,33 +75,33 @@ while True:
     LOAD  0100 0000
     STORE 1000 0000
     """
-    if op_code == 0b0000:            # Halt 
+    if opcode == 0b0000:            # Halt 
         print_memory('Execute')
         break
     
-    elif op_code == 0b0001:          # Add operation
-        mar = oprand
+    elif opcode == 0b0001:          # Add operation
+        mar = operand
         mdr = memory[mar]
         alu = accumulator_unit
         accumulator_unit = mdr
         alu = alu + accumulator_unit
         accumulator_unit = alu
         
-    elif op_code == 0b0010:         # Sub operation
-        mar = oprand
+    elif opcode == 0b0010:         # Sub operation
+        mar = operand
         mdr = memory[mar]
         alu = accumulator_unit
         accumulator_unit = mdr
         alu = alu - accumulator_unit
         accumulator_unit = alu
         
-    elif op_code == 0b0100:         # Load operation
-        mar = oprand
+    elif opcode == 0b0100:         # Load operation
+        mar = operand
         mdr = memory[mar]
         accumulator_unit = mdr
         
-    elif op_code == 0b1000:         # Store operation
-        mar = oprand
+    elif opcode == 0b1000:         # Store operation
+        mar = operand
         mdr = accumulator_unit 
         memory[mar] = mdr
         
