@@ -63,7 +63,7 @@ while True:
     # Decode
     control_unit = cir
     op_code     = (control_unit >> 4) & 0b1111
-    arguments   = control_unit & 0b1111
+    oprand   = control_unit & 0b1111
     print_memory('Decode')
     if input("Enter to next intruction block or enter `q` to quit.").lower() == 'q': break
     
@@ -80,7 +80,7 @@ while True:
         break
     
     elif op_code == 0b0001:          # Add operation
-        mar = arguments
+        mar = oprand
         mdr = memory[mar]
         alu = accumulator_unit
         accumulator_unit = mdr
@@ -88,7 +88,7 @@ while True:
         accumulator_unit = alu
         
     elif op_code == 0b0010:         # Sub operation
-        mar = arguments
+        mar = oprand
         mdr = memory[mar]
         alu = accumulator_unit
         accumulator_unit = mdr
@@ -96,12 +96,12 @@ while True:
         accumulator_unit = alu
         
     elif op_code == 0b0100:         # Load operation
-        mar = arguments
+        mar = oprand
         mdr = memory[mar]
         accumulator_unit = mdr
         
     elif op_code == 0b1000:         # Store operation
-        mar = arguments
+        mar = oprand
         mdr = accumulator_unit 
         memory[mar] = mdr
         
