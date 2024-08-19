@@ -4,11 +4,11 @@ from typing import List
     8 bit intruction set
     4 bit opcode
     4 bit operand
-    HLT   0000 0000
-    ADD   0001 0000
-    SUB   0010 0000
-    LOAD  0100 0000
-    STORE 1000 0000
+    HLT   [address] --> 0000_[address]
+    ADD   [address] --> 0001_[address]
+    SUB   [address] --> 0010_[address]
+    LOAD  [address] --> 0100_[address]
+    STORE [address] --> 1000_[address]
 """
 
 control_unit:     int = 0
