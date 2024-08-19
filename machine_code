@@ -1,0 +1,5 @@
+memory[0] = 42
+memory[1] = 37
+memory[100] = 0b01000000
+memory[101] = 0b00010001
+memory[102] = 0b10000000

@@ -27,14 +27,14 @@ def print_memory(op: str):
         binary = f"{num:08b}"
         return binary[:4] + '_' + binary[4:]
     print(f"\n######################### {op.upper()} #################################\n")
-    print(f"{pc=} \t\tcontrol_unit={format(control_unit)}")
-    print(f"cir={format(cir)}\t{accumulator_unit=}")
-    print(f"{mar=}\t\t{alu=}")
+    print(f"{pc=} \t\t\tcontrol_unit={format(control_unit)}")
+    print(f"cir={format(cir)}\t\t{accumulator_unit=}")
+    print(f"{mar=}\t\t\t{alu=}")
     print(f"mdr={format(mdr)}")
     print("Memory usage")
     print("-------------------\t--------------------------")
     for data1, data2 in zip(enumerate(memory[:16]), enumerate(memory[100:116])):
-        print(f"| {data1[0]} \t| \t{data1[1]} |\t| {data2[0]+100} \t| \t{format(data2[1])} |")
+        print(f"| {data1[0]} \t| {data1[1]}\t |\t| {data2[0]+100} {'*' if data2[0]+100 == pc else ''}\t|\t{format(data2[1])} |")
     print("-------------------\t--------------------------")
 
 # Add your code here
@@ -47,6 +47,9 @@ with open(sys.argv[1], 'r') as file:
         exec(line.strip()) # Load program into memory
     
     
+print_memory("Starting CPU")
+if input("Enter to next intruction block or enter `q` to quit.").lower() == 'q': exit()
+
 while True:
     
     # Fetch

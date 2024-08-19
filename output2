@@ -1,5 +1,0 @@
-memory[10] = 2
-memory[11] = 3
-memory[100] = 0b01001010
-memory[101] = 0b00011011
-memory[102] = 0b10001100
