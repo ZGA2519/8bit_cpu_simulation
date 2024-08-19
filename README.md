@@ -15,9 +15,9 @@ For this instruction, 8 bits are separated by a set of 4-bit op code and 4-bit o
 
 compile to machine code
 ```
-    python asm_compiler.py <input> <output>
+python asm_compiler.py <input> <output>
 ```
 
 run
 ```
-    python cpu_vir.py <machine_code>
+python cpu_vir.py <machine_code>
